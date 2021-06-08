@@ -29,7 +29,7 @@
 
 3. 拷贝2个动态文件到/usr/lib64(linux的环境)
 
-   ![image-20210608133536345](/Users/tangfei/Library/Application Support/typora-user-images/image-20210608133536345.png)
+   ![](https://sevenbooks.oss-cn-hangzhou.aliyuncs.com/postimages/20210608133828.png)
 
 4. 启动shell
 
