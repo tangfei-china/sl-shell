@@ -30,7 +30,7 @@ public class AppShell {
     /**
      * 授权程序验证是否授权方法
      *
-     * @param fid  功能ID
+     * @param fid 功能ID
      */
     @ShellMethod("登录验证")
     public void Login(@ShellOption(help = "功能ID") Long fid) {
@@ -95,17 +95,18 @@ public class AppShell {
 
     /**
      * 获取机器指纹信息
-     *
-     * @param pid 产品ID
      */
     @ShellMethod("获取指纹信息")
-    public void Generate(@ShellOption(help = "产品ID") String pid) {
+    public void Generate() {
 
         String scope =
-                "<haspscope><product id=\"" + pid + "\"/></haspscope>";
+                "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +
+                        "<haspscope>" +
+                        "    <license_manager hostname=\"localhost\" />" +
+                        "</haspscope>";
 
         String format =
-                "<haspformat format=\"updateinfo\"/>";
+                "<haspformat format=\"host_fingerprint\"/>";
 
         String info;
 
@@ -113,7 +114,6 @@ public class AppShell {
 
         int status = hasp.getLastError();
 
-        log.info("scope：{}", scope);
         log.info("状态：{}", status);
         log.info("返回信息：{}", info);
     }
